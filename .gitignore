@@ -2,6 +2,7 @@
 ###################
 application/config/config.php
 application/config/database.php
+bower_components
 node_modules
 vendor/**
 composer.phar
