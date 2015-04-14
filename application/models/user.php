@@ -1,51 +1,53 @@
 <?php
-Class User extends CI_Model
+class User extends CI_Model
 {
 	function __construct()
 	{
 		parent::__construct();
 	}
-	
-	function get_json_data()
+
+	public function validLogin()
 	{
-		$this->db->select();
-		$this->db->from('users');
-		$this->db->order_by('id');
-		$query = $this->db->get();
-	
-		return $query->result();
+		$this->db->where('username', $this->input->post('username'));
+		$this->db->where('password', sha1($this->input->post('password')));
+		$query = $this->db->get('users');
+
+		if($query->num_rows() == 1)
+			return true;
+		else
+			return false; 
 	}
 
-	/*const TABLE = 'user';
-
-	function __constructor()
+	public function validUsername()
 	{
-		parent::__construct();
-		//$this->load->model('user/');
-		echo ('aaa');
-		die();
+		$this->db->where('username', $this->input->post('username'));
+		$query = $this->db->get('users');
+
+		if($query->num_rows() >0)
+			return false;
+		else
+			return true; 
 	}
 
-	function getAll()
+	public function validEmail()
 	{
-		$query = $this->db->query("SELECT * FROM users");
-		return $query->result();
+		$this->db->where('email', $this->input->post('email'));
+		$query = $this->db->get('users');
+
+		if($query->num_rows() >0)
+			return false;
+		else
+			return true; 
 	}
 
-	function insert()
+	public function addUser($Username, $Password, $Email)
 	{
+		$arrInput = array('username'=>$Username, 'password'=>$Password, 'email'=>$Email);
+		$query = $this->db->insert('users', $arrInput); 
 
-		//$arrData = array('username'=>'test1;@$%', 'password'=>sha1('123'));
-		//$this->simpleQuery(
-		//"INSERT INTO ".self::TABLE."(username, password) VALUES (".$this->db->escape('test6').", ".$this->db->escape(sha1('123')).")"); 
+		if($query)
+			return true;
+		else
+			return false;
 	}
-
-	function simpleQuery($Query)
-	{
-		if(! $this->db->simple_query($Query))
-		{
-			var_dump($this->db->error());
-			die('Error Message');
-		}
-	}*/
 }

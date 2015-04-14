@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Site extends CI_Controller {
+class Site extends App_Controller {
 
 	public function __construct()
 	{
@@ -15,6 +15,11 @@ class Site extends CI_Controller {
 		$data['scripts']['demo1'] = 'demo1';
 
 		$this->load->view('master',$data);
+	}
+
+	public function isExist()
+	{
+		
 	}
 
 	public function json_get_user()

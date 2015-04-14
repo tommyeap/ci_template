@@ -1,0 +1,211 @@
+html, body {
+	height: 100%;
+}
+body {
+    color: #fff;
+    font-family: "Open Sans",sans-serif;
+	background: url(../img/000047.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+/**********************************************************************/
+/************************** COMMON ELEMENTS **************************/
+/********************************************************************/
+
+a:focus {
+    outline: none;
+}
+.btn:focus, .btn:active:focus, .btn.active:focus {
+    outline: none;
+}
+/** Custom styles **/
+.vis-hidden {
+	visibility: hidden !important;
+}
+a {
+	-webkit-transition: 0.25s;
+	-moz-transition: 0.25s;
+	-o-transition: 0.25s;
+	transition: 0.25s;
+}
+
+#mainWrap {
+	min-height: 100%;
+	overflow: auto;
+	padding-bottom: 55px;
+}
+/**********************************************************************/
+/************************** LOGIN CONTAINER **************************/
+/********************************************************************/
+#status-area,#check-name-result-area{
+	background-color: rgba(0,0,0,0.9);
+	width: 524px;
+	margin: 0 auto;
+	padding: 10px 60px;
+}
+#check-name-result-area{
+	display:none;
+	margin-top:-20px;
+}
+#result-area{
+	background-color: rgba(0,0,0,0.9);
+	width: 100%;
+}
+.loading{
+	background-image:url(../img/loading.gif); 
+	background-size: 30px 30px;
+    background-repeat: no-repeat;
+	height:30px;
+	width:30px;
+	margin-left:auto;
+	margin-right:-40px;
+}
+
+#login{
+	background:rgba(0,0,0,.7);
+	width: 524px;
+	margin: 10% auto 0;
+	padding: 20px 40px;
+}
+#login h1 {
+	text-align: center;
+	font-weight: 700;
+	margin: 5px 0 15px;
+}
+#login h3 {
+	text-align: center;
+	font-size: 18px;
+	color: #bbb;
+	margin: 0 0 20px;
+}
+#login .input-group-addon {
+	border: 0 none;
+}
+#login .form-control {
+	border: 0 none;
+}
+#login .form-control:focus {
+	box-shadow: none;
+}
+#login .formSubmit {
+	margin-bottom: 25px;
+}
+#login .submitWrap {
+	text-align: right;
+}
+#login .formNotice {
+	margin: 0;
+	font-size: 13px;
+}
+#login .formNotice span {
+	cursor: pointer;
+	color: #428BCA;
+}
+#login .formNotice span:hover,
+#login .formNotice span:focus {
+    color: #2A6496;
+    text-decoration: underline;
+}
+
+#login-title, #register-title{
+	
+	margin-bottom:20px;
+	margin-top:10px;
+}
+#login-title{
+	color:darkorange;
+}
+#register-title{
+	color:burlywood;
+}
+
+#lastName{
+	border-top-right-radius:0;
+	height:40px;
+}
+#firstName{
+	border-top-right-radius:6px;
+	height:40px;
+}
+
+#menu-wrap{
+	max-width: 400px;
+	margin:0 auto;
+}
+.col-sm-5.submitWrap{
+	margin-top:5px;
+}
+.divider-white{
+	border-bottom:1px solid #FFF;
+	opacity:0.7;
+}
+/** Custom style to overwrite the bootstrap **/
+.btn-block{
+	padding:10px 0;
+}
+
+.form-horizontal .has-feedback .form-control-feedback{
+	margin-top:7px;
+}
+
+/**********************************************************************/
+/************************* FOOTER ************************************/
+/********************************************************************/
+footer {
+	/**background: none repeat scroll 0 0 #111111;**/
+    height: 55px;
+    margin-top: -55px;
+    position: relative;
+	text-align: center;
+	padding: 20px 0;
+}
+footer p {
+	color: #CCCCCC;
+    font-weight: 300;
+    line-height: 1.4;
+    margin: 0;
+	padding: 0 5px;
+	font-size: 16px;
+}
+
+/**********************************************************************/
+/****************** MEDIA QUERIES ************************************/
+/********************************************************************/
+
+@media(min-width:768px){
+	#result-area{
+		background-color: rgba(0,0,0,0.0) !important;
+	}
+
+}
+@media (max-width: 767px) {
+	body {
+		padding-bottom: 0;
+	}
+	#login {
+		margin-top: 0;
+		width: 100%;
+		padding: 100px 40px 30px 40px;
+	}
+	#login .submitWrap {
+		margin-top: 15px;
+		text-align: center;
+	}
+	#status-area,#check-name-result-area{
+		width:100% !important;
+	}
+	footer {
+		position: relative;
+	}
+	footer p{
+		font-size: 13px;
+	}
+	
+}
+@media (max-width: 500px) {
+	#login {
+		width: 100%;
+	}
+}
